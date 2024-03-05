@@ -1,30 +1,21 @@
 {
-  "name": "plugin-sample",
-  "author": "Vanessa",
-  "url": "https://github.com/siyuan-note/plugin-sample",
-  "version": "0.3.4",
+  "name": "siyuan-plugin-ttf-HarmonyOS_Sans_SC",
+  "author": "TCOTC",
+  "url": "https://github.com/TCOTC/siyuan-plugin-ttf-HarmonyOS_Sans_SC",
+  "version": "0.0.1",
   "minAppVersion": "3.0.0",
   "backends": [
-    "windows",
-    "linux",
-    "darwin",
-    "ios",
-    "android"
+    "all"
   ],
   "frontends": [
-    "desktop",
-    "mobile",
-    "browser-desktop",
-    "browser-mobile",
-    "desktop-window"
+    "all"
   ],
   "displayName": {
-    "default": "Plugin Sample",
-    "zh_CN": "插件示例"
+      "default": "鸿蒙字体 - HarmonyOS Sans SC font"
   },
   "description": {
-    "default": "This is a plugin sample",
-    "zh_CN": "这是一个插件示例"
+    "default": "HarmonyOS Sans SC font",
+    "zh_CN": " HarmonyOS Sans SC 鸿蒙字体"
   },
   "readme": {
     "default": "README.md",
@@ -35,11 +26,14 @@
     "patreon": "",
     "github": "",
     "custom": [
-      "https://ld246.com/sponsor"
+      "https://afdian.net/a/JeffreyChen"
     ]
   },
   "keywords": [
-    "sample",
-    "示例"
+    "font",
+    "字体",
+    "字",
+    "Harmony",
+    "鸿蒙"
   ]
 }
