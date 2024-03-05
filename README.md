@@ -1,4 +1,4 @@
-[中文](https://github.com/TCOTC/siyuan-plugin-ttf-HarmonyOS_Sans_SC/blob/main/README_zh_CN.md)
+[中文](https://github.com/TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/blob/main/README_zh_CN.md)
 
 # SiYuan HarmonyOS Sans font and Twitter Emoji plugin
 
