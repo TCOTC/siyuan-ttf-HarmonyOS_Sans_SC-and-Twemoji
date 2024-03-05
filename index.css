@@ -11,15 +11,9 @@
     font-display: swap;
     src: url("/plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/Twemoji.Mozilla.ttf");
 }
-/*
+
 :root {
     --b3-font-family-emoji: 'Twitter Emoji', sans-serif !important;
     --b3-font-family-code: "JetBrainsMono-Regular", mononoki, Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twitter Emoji', "Noto Color Emoji", "OpenMoji", "Apple Color Emoji", "Segoe UI Emoji", "Twitter Emoji", "Noto Color Emoji", "OpenMoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols" !important;
     --b3-font-family: "HarmonyOS Sans SC", "Helvetica Neue", "Luxi Sans", "DejaVu Sans", "Hiragino Sans GB", "Microsoft Yahei", "sans-serif", "Twitter Emoji", "Noto Color Emoji", "OpenMoji", "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji","Twitter Emoji", "Noto Color Emoji", "OpenMoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols" !important;
-}*/
-
-:root {
-    --b3-font-family-emoji: 'Twitter Emoji', sans-serif !important;
-    --b3-font-family-code: "JetBrainsMono-Regular", mononoki, Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twitter Emoji', "Apple Color Emoji", "Segoe UI Emoji", "Twitter Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols" !important;
-    --b3-font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, 'Twitter Emoji', "Apple Color Emoji", "Segoe UI Emoji", "Twitter Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols" !important;
 }
