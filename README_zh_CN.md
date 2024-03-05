@@ -8,9 +8,7 @@ Emoji 文件来自：[mozilla/twemoji-colr](https://github.com/mozilla/twemoji-c
 
 ### 注意
 
-本插件可能与集市中的其他字体或 Emoji 插件不兼容。
-
-由于 Twemoji 覆盖更完整、更美观，所以本插件仅尝试兼容了集市中的 siyuan-plugin-twitter-emoji 插件。在启用了[表情包- Twitter Emoji](https://github.com/zuoez02/siyuan-plugin-twitter-emoji)插件的情况下应该也能使用本插件，但仍然建议在使用本插件的情况下禁用[表情包- Twitter Emoji](https://github.com/zuoez02/siyuan-plugin-twitter-emoji)插件。
+本插件可能与集市中的其他字体或 Emoji 插件不兼容，使用本插件时请禁用其他字体或 Emoji 插件。
 
 ### 鸣谢
 
