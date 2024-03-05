@@ -6,7 +6,7 @@ The font file comes from: [HarmonyOS Developer Documentation](https://developer.
 
 The emoji file comes from:[mozilla/twemoji-colr](https://github.com/mozilla/twemoji-colr)
 
-### Attention
+### Notice
 
 This plugin may not be compatible with other fonts or Emoji plugins in the bazaar.
 
