@@ -2,7 +2,7 @@
   "name": "siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji",
   "author": "TCOTC",
   "url": "https://github.com/TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji",
-  "version": "0.1.8",
+  "version": "0.2.0",
   "backends": [
     "all"
   ],
@@ -47,6 +47,7 @@
     "表情",
     "符号",
     "图标",
-    "icon"
+    "icon",
+    "TCOTC"
   ]
 }

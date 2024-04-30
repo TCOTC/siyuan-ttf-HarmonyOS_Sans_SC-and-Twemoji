@@ -16,7 +16,7 @@ jobs:
       - name: Package zip
         uses: vimtor/action-zip@v1
         with:
-          files: icon.png index.css index.js plugin.json preview.png README.md README_zh_CN.md HarmonyOS_Sans_SC_Regular.ttf Twemoji.Mozilla.ttf
+          files: icon.png index.css index.js plugin.json preview.png README.md README_zh_CN.md HarmonyOS_Sans_SC_Regular.woff Twemoji.Mozilla.ttf
           dest: package.zip
           
 
@@ -27,5 +27,5 @@ jobs:
           artifactErrorsFailBuild: true
           artifacts: "package.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
-          prerelease: false
-          makeLatest: true
+          prerelease: true
+          makeLatest: false

@@ -1,7 +1,7 @@
 @font-face {
     font-family: "HarmonyOS Sans SC";
     font-style: normal;
-    src: url("/plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/HarmonyOS_Sans_SC_Regular.ttf");
+    src: local("../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/HarmonyOS_Sans_SC_Regular.woff");
 }
 
 @font-face {
@@ -9,7 +9,7 @@
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url("/plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/Twemoji.Mozilla.ttf");
+    src: local("../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/Twemoji.Mozilla.ttf");
 }
 
 :root {
