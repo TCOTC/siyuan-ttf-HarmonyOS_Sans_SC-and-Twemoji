@@ -9,7 +9,7 @@
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: local("../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/Twemoji.Mozilla.ttf");
+    src: url("../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/Twemoji.Mozilla.ttf");
 }
 
 :root {
