@@ -1,7 +1,8 @@
 @font-face {
     font-family: "HarmonyOS Sans SC";
     font-style: normal;
-    src: local("../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/HarmonyOS_Sans_SC_Regular.woff");
+    src: url("../plugins/siyuan-ttf-LXGWWenKaiGB-and-Twemoji/HarmonyOS_Sans_SC_Regular.woff2") format("woff2"),
+    url("../plugins/siyuan-ttf-LXGWWenKaiGB-and-Twemoji/HarmonyOS_Sans_SC_Regular.woff") format("woff");
 }
 
 @font-face {
@@ -13,7 +14,7 @@
 }
 
 :root {
-    --b3-font-family-emoji: 'Twitter Emoji', sans-serif !important;
-    --b3-font-family-code: "JetBrainsMono-Regular", mononoki, Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twitter Emoji', "Noto Color Emoji", "OpenMoji", "Apple Color Emoji", "Segoe UI Emoji", "Twitter Emoji", "Noto Color Emoji", "OpenMoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols" !important;
-    --b3-font-family: "HarmonyOS Sans SC", "Helvetica Neue", "Luxi Sans", "DejaVu Sans", "Hiragino Sans GB", "Microsoft Yahei", "sans-serif", "Twitter Emoji", "Noto Color Emoji", "OpenMoji", "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji","Twitter Emoji", "Noto Color Emoji", "OpenMoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols" !important;
+    --b3-font-family: "HarmonyOS Sans SC", apple-system, BlinkMacSystemFont,"Helvetica Neue", "Luxi Sans", "DejaVu Sans", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Twitter Emoji", "Noto Color Emoji", "OpenMoji", "Apple Color Emoji", "Noto Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols" !important;
+    --b3-font-family-code: "JetBrainsMono-Regular", mononoki, Consolas, "Liberation Mono", Menlo, Courier, monospace, var(--b3-font-family), var(--b3-font-family-emoji) !important;
+    --b3-font-family-emoji: 'Twitter Emoji', "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "Apple Color Emoji", "Twemoji Mozilla", "Noto Color Emoji", "Android Emoji" !important;
 }
