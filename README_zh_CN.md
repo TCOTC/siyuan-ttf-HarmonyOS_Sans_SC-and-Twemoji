@@ -16,6 +16,10 @@ Emoji 文件来自：[mozilla/twemoji-colr](https://github.com/mozilla/twemoji-c
 
 - 字体文件由 .ttf 格式转换为 .woff 与 .woff2 格式，减小体积、提高加载效率，并尝试兼容 Windows11
 
+### 2024.5.3
+
+- 修复字体路径错误
+
 ### 鸣谢
 
 帖子：[思源笔记手机端和电脑端使用同一字体 - 链滴](https://ld246.com/article/1705399357823)
