@@ -4,7 +4,7 @@
 
 The font file comes from: [HarmonyOS Developer Documentation](https://developer.harmonyos.com/cn/docs/design/des-guides/font-0000001157868583), converted from .ttf format to .woff format
 
-The emoji file comes from:[mozilla/twemoji-colr](https://github.com/mozilla/twemoji-colr)
+The emoji file comes from: [jdecked/twemoji](https://github.com/jdecked/twemoji): https://artefacts.whynothugo.nl/twemoji.ttf
 
 ### Notice
 
