@@ -24,6 +24,8 @@ Emoji 文件来自：[jdecked/twemoji](https://github.com/jdecked/twemoji)：htt
 
 ### 2024.8.18
 
+- 修复 Emoji 字体打包错误
+
 ### 鸣谢
 
 帖子：[思源笔记手机端和电脑端使用同一字体 - 链滴](https://ld246.com/article/1705399357823)
