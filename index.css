@@ -1,8 +1,7 @@
 @font-face {
     font-family: "HarmonyOS Sans SC";
     font-style: normal;
-    src: url("../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/HarmonyOS_Sans_SC_Regular.woff2") format("woff2"),
-    url("../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/HarmonyOS_Sans_SC_Regular.woff") format("woff");
+    src: url("../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/HarmonyOS_Sans_SC_Regular.woff") format("woff");
 }
 
 @font-face {

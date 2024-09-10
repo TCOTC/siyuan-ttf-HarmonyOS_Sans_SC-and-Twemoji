@@ -2,7 +2,7 @@
 
 # 思源笔记 鸿蒙字体和 Twitter Emoji 插件
 
-字体文件来自：[鸿蒙系统开发者文档](https://developer.harmonyos.com/cn/docs/design/des-guides/font-0000001157868583)，由 .ttf 格式转换为 .woff 与 .woff2 格式
+字体文件来自：[鸿蒙系统开发者文档](https://developer.harmonyos.com/cn/docs/design/des-guides/font-0000001157868583)，由 .ttf 格式转换为 .woff 格式
 
 Emoji 文件来自：[jdecked/twemoji](https://github.com/jdecked/twemoji)：https://artefacts.whynothugo.nl/twemoji.ttf
 
@@ -25,6 +25,10 @@ Emoji 文件来自：[jdecked/twemoji](https://github.com/jdecked/twemoji)：htt
 ### 2024.8.18
 
 - 修复 Emoji 字体打包错误
+
+### 2024.9.10
+
+- 移除多余的 .woff2 格式字体
 
 ### 鸣谢
 
