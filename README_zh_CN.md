@@ -2,13 +2,15 @@
 
 # 思源笔记 鸿蒙字体和 Twitter Emoji 插件
 
-字体文件来自：[鸿蒙系统开发者文档](https://developer.harmonyos.com/cn/docs/design/des-guides/font-0000001157868583)，由 .ttf 格式转换为 .woff 格式
+字体文件来自：[鸿蒙系统开发者文档](https://developer.harmonyos.com/cn/docs/design/des-guides/font-0000001157868583)或[鸿蒙设计资源](https://developer.huawei.com/consumer/cn/design/resource/)，由 .ttf 格式[转换](https://cloudconvert.com/ttf-to-woff)为 .woff 格式，字体版本为 2023.11.27
 
 Emoji 文件来自：[jdecked/twemoji](https://github.com/jdecked/twemoji)：https://artefacts.whynothugo.nl/twemoji.ttf
 
 ### 注意
 
 本插件可能与集市中的其他字体或 Emoji 插件不兼容，使用本插件时请禁用其他字体或 Emoji 插件。
+
+表情符号选择器中会出现空位是因为 Emoji 字体暂未支持 [Unicode 16.0](https://github.com/jdecked/twemoji/issues/88)。
 
 ### 2024.5.1
 

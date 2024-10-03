@@ -2,7 +2,7 @@
 
 # SiYuan HarmonyOS Sans font and Twitter Emoji plugin
 
-The font file comes from: [HarmonyOS Developer Documentation](https://developer.harmonyos.com/cn/docs/design/des-guides/font-0000001157868583), converted from .ttf format to .woff format
+The font file comes from: [HarmonyOS Developer Documentation](https://developer.harmonyos.com/cn/docs/design/des-guides/font-0000001157868583) or the [Harmony Design Resources](https://developer.huawei.com/consumer/cn/design/resource/), [converted](https://cloudconvert.com/ttf-to-woff) from .ttf format to .woff format, and the font version is 2023.11.27
 
 The emoji file comes from: [jdecked/twemoji](https://github.com/jdecked/twemoji): https://artefacts.whynothugo.nl/twemoji.ttf
 
