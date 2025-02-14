@@ -64,14 +64,14 @@
 }
 
 :root {
-    --b3-font-family: "HarmonyOS Sans", "HarmonyOS Sans SC", "HarmonyOS Sans Naskh Arabic", "Twemoji", "Emojis Additional", "Emojis Reset", BlinkMacSystemFont, Helvetica, "Luxi Sans", "DejaVu Sans", "Hiragino Sans", arial, sans-serif, emojis;
-    --b3-font-family-emoji: "Twemoji", "Emojis Additional", emojis;
+    --b3-font-family: "HarmonyOS Sans", "HarmonyOS Sans SC", "HarmonyOS Sans Naskh Arabic", "Twemoji", "Emojis Additional", "Emojis Reset", BlinkMacSystemFont, Helvetica, "Luxi Sans", "DejaVu Sans", "Hiragino Sans", arial, sans-serif, emojis !important;
+    --b3-font-family-emoji: "Twemoji", "Emojis Additional", emojis !important;
 }
 
 :root:lang(zh_CN) {
-    --b3-font-family: "HarmonyOS Sans", "HarmonyOS Sans SC", "HarmonyOS Sans Naskh Arabic", "Twemoji", "Emojis Additional", "Emojis Reset", BlinkMacSystemFont, Helvetica, "PingFang SC", "Luxi Sans", "DejaVu Sans", arial, "Microsoft Yahei", "Hiragino Sans GB", "Source Han Sans SC", sans-serif, emojis;
+    --b3-font-family: "HarmonyOS Sans", "HarmonyOS Sans SC", "HarmonyOS Sans Naskh Arabic", "Twemoji", "Emojis Additional", "Emojis Reset", BlinkMacSystemFont, Helvetica, "PingFang SC", "Luxi Sans", "DejaVu Sans", arial, "Microsoft Yahei", "Hiragino Sans GB", "Source Han Sans SC", sans-serif, emojis !important;
 }
 
 :root:lang(ar_SA) {
-    --b3-font-family: "HarmonyOS Sans", "HarmonyOS Sans Naskh Arabic", "HarmonyOS Sans SC", "Twemoji", "Emojis Additional", "Emojis Reset", BlinkMacSystemFont, Helvetica, "Luxi Sans", "DejaVu Sans", "Hiragino Sans", arial, sans-serif, emojis;
+    --b3-font-family: "HarmonyOS Sans", "HarmonyOS Sans Naskh Arabic", "HarmonyOS Sans SC", "Twemoji", "Emojis Additional", "Emojis Reset", BlinkMacSystemFont, Helvetica, "Luxi Sans", "DejaVu Sans", "Hiragino Sans", arial, sans-serif, emojis !important;
 }
