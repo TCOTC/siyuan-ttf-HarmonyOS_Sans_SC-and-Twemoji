@@ -1,31 +1,27 @@
-name: Create Release on Tag Push
-
-on:
-  push:
+name: Create package.zip 3
+on: 
+  push: 
     tags:
-      - "v*"
-
+      - "*"
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # Checkout
-      - name: Checkout
-        uses: actions/checkout@v3
+    - uses: actions/checkout@master
+    - name: Archive Release
+      uses: thedoctor0/zip-release@0.7.1
+      with:
+        type: 'zip'
+        filename: 'package.zip'
+        exclusions: '*.git* /*node_modules/* .editorconfig LICENSE'
 
-      - name: Package zip
-        uses: vimtor/action-zip@v1
-        with:
-          files: icon.png index.css index.js plugin.json preview.png README.md README_zh_CN.md HarmonyOS_Sans_SC_Regular.woff Twemoji-15.1.0.ttf
-          dest: package.zip
-          
-
-      - name: Release
-        uses: ncipollo/release-action@v1
-        with:
-          allowUpdates: true
-          artifactErrorsFailBuild: true
-          artifacts: "package.zip"
-          token: ${{ secrets.GITHUB_TOKEN }}
-          prerelease: true
-          makeLatest: false
+    - name: Upload Release
+      uses: ncipollo/release-action@v1
+      with:
+        allowUpdates: true
+        prerelease: true
+        artifactErrorsFailBuild: true
+        removeArtifacts: false
+        replacesArtifacts: false
+        artifacts: "package.zip"
+        token: ${{ secrets.GITHUB_TOKEN }}
