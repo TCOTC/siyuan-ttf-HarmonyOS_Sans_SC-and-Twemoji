@@ -2,7 +2,7 @@
   "name": "siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji",
   "author": "TCOTC",
   "url": "https://github.com/TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji",
-  "version": "0.2.6",
+  "version": "1.0.0",
   "backends": [
     "all"
   ],
@@ -10,44 +10,35 @@
     "all"
   ],
   "displayName": {
-    "default": "HarmonyOS Sans font and Twitter Emoji",
-    "zh_CN": "鸿蒙字体和 Twitter Emoji"
+    "default": "HarmonyOS Sans and Twemoji",
+    "zh_CN": "鸿蒙字体(简)和 Twemoji"
   },
   "description": {
-    "default": "HarmonyOS Sans SC (font) & Twemoji (Twitter Emoji)",
-    "zh_CN": "HarmonyOS Sans SC (鸿蒙字体) & Twemoji (Twitter Emoji)"
+    "default": "HarmonyOS Sans & Twemoji",
+    "zh_CN": "HarmonyOS Sans SC & Twemoji"
   },
   "readme": {
     "default": "README.md",
     "zh_CN": "README_zh_CN.md"
   },
   "funding": {
-    "openCollective": "",
-    "patreon": "",
-    "github": "",
     "custom": [
-      "https://afdian.com/a/JeffreyChen"
+      "https://bento.me/jeffff"
     ]
   },
   "keywords": [
     "font",
     "字体",
-    "字",
-    "Harmony",
-    "HarmonyOS",
     "鸿蒙",
-    "HarmonyOS_Sans_SC",
-    "font",
-    "Twitter",
+    "HarmonyOS Sans SC",
     "siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji",
+    "Twitter Emoji",
     "Twemoji",
-    "Emoji",
     "emoji",
     "表情包",
     "表情",
     "符号",
     "图标",
-    "icon",
-    "TCOTC"
+    "icon"
   ]
 }

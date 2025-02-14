@@ -1,36 +1,15 @@
-[English](https://github.com/TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/blob/main/README.md)
+> 近期更新：增加 Bold 字重，优化粗体显示
 
-# 思源笔记 鸿蒙字体和 Twitter Emoji 插件
+# 鸿蒙简体和 Twemoji
 
-字体文件来自：[鸿蒙系统开发者文档](https://developer.harmonyos.com/cn/docs/design/des-guides/font-0000001157868583)或[鸿蒙设计资源](https://developer.huawei.com/consumer/cn/design/resource/)，由 .ttf 格式[转换](https://cloudconvert.com/ttf-to-woff)为 .woff 格式，字体版本为 2023.11.27
+字体文件来自：[鸿蒙系统设计资源](https://developer.huawei.com/consumer/cn/design/resource/)
 
 Emoji 文件来自：[jdecked/twemoji](https://github.com/jdecked/twemoji)：https://artefacts.whynothugo.nl/twemoji.ttf
 
 ### 注意
 
-本插件可能与集市中的其他字体或 Emoji 插件不兼容，使用本插件时请禁用其他字体或 Emoji 插件。
-
-表情符号选择器中会出现空位是因为 Emoji 字体暂未支持 [Unicode 16.0](https://github.com/jdecked/twemoji/issues/88)。
-
-### 2024.5.1
-
-- 字体文件由 .ttf 格式转换为 .woff 与 .woff2 格式，减小体积、提高加载效率，并尝试兼容 Windows11
-
-### 2024.5.3
-
-- 修复字体路径错误
-
-### 2024.7.9
-
-- 更换 Emoji 字体来源
-
-### 2024.8.18
-
-- 修复 Emoji 字体打包错误
-
-### 2024.9.10
-
-- 移除多余的 .woff2 格式字体
+- 本插件可能与集市中的其他字体或 Emoji 插件不兼容，使用本插件时请禁用其他字体或 Emoji 插件。
+- 不包含繁体中文字形，因为鸿蒙字体的繁体不完整
 
 ### 鸣谢
 

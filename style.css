@@ -1,0 +1,77 @@
+/* 基础字体 */
+@font-face {
+    font-family: "HarmonyOS Sans";
+    src: url('../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/HarmonyOS_Sans/HarmonyOS_Sans/HarmonyOS_Sans_Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "HarmonyOS Sans";
+    src: url('../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/HarmonyOS_Sans/HarmonyOS_Sans/HarmonyOS_Sans_Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* 基础斜体 */
+@font-face {
+    font-family: "HarmonyOS Sans";
+    src: url('../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/HarmonyOS_Sans/HarmonyOS_Sans_Italic/HarmonyOS_Sans_Regular_Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: "HarmonyOS Sans";
+    src: url('../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/HarmonyOS_Sans/HarmonyOS_Sans_Italic/HarmonyOS_Sans_Bold_Italic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* 简体中文 */
+@font-face {
+    font-family: 'HarmonyOS Sans SC';
+    src: url('../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/HarmonyOS_Sans/HarmonyOS_Sans_SC/HarmonyOS_SansSC_Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'HarmonyOS Sans SC';
+    src: url('../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/HarmonyOS_Sans/HarmonyOS_Sans_SC/HarmonyOS_SansSC_Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* 阿拉伯语 */
+@font-face {
+    font-family: 'HarmonyOS Sans Naskh Arabic';
+    src: url('../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/HarmonyOS_Sans/HarmonyOS_Sans_Naskh_Arabic/HarmonyOS_Sans_Naskh_Arabic_Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'HarmonyOS Sans Naskh Arabic';
+    src: url('../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/HarmonyOS_Sans/HarmonyOS_Sans_Naskh_Arabic/HarmonyOS_Sans_Naskh_Arabic_Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Twemoji */
+@font-face {
+    font-family: "Twemoji";
+    src: url("../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/Twemoji/Twemoji-15.1.0.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+:root {
+    --b3-font-family: "HarmonyOS Sans", "HarmonyOS Sans SC", "HarmonyOS Sans Naskh Arabic", "Twemoji", "Emojis Additional", "Emojis Reset", BlinkMacSystemFont, Helvetica, "Luxi Sans", "DejaVu Sans", "Hiragino Sans", arial, sans-serif, emojis;
+    --b3-font-family-emoji: "Twemoji", "Emojis Additional", emojis;
+}
+
+:root:lang(zh_CN) {
+    --b3-font-family: "HarmonyOS Sans", "HarmonyOS Sans SC", "HarmonyOS Sans Naskh Arabic", "Twemoji", "Emojis Additional", "Emojis Reset", BlinkMacSystemFont, Helvetica, "PingFang SC", "Luxi Sans", "DejaVu Sans", arial, "Microsoft Yahei", "Hiragino Sans GB", "Source Han Sans SC", sans-serif, emojis;
+}
+
+:root:lang(ar_SA) {
+    --b3-font-family: "HarmonyOS Sans", "HarmonyOS Sans Naskh Arabic", "HarmonyOS Sans SC", "Twemoji", "Emojis Additional", "Emojis Reset", BlinkMacSystemFont, Helvetica, "Luxi Sans", "DejaVu Sans", "Hiragino Sans", arial, sans-serif, emojis;
+}
