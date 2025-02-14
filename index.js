@@ -29,22 +29,22 @@ module.exports = class PluginHarmonyOSSansTwemoji extends require('siyuan').Plug
     }
 
     onunload() {
-        console.log("siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji: unloaded");
-
         // 移除 style 元素
         const styleElement = document.getElementById('snippetCSS-HarmonyOSSansTwemoji');
         if (styleElement) {
             styleElement.remove();
         }
+        
+        console.log("siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji: unloaded");
     }
 
     uninstall() {
-        console.log("siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji: uninstall");
-
         // 在卸载时也移除 style 元素
         const styleElement = document.getElementById('snippetCSS-HarmonyOSSansTwemoji');
         if (styleElement) {
             styleElement.remove();
         }
+        
+        console.log("siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji: uninstall");
     }
 }
