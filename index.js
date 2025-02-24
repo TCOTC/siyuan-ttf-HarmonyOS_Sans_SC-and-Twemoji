@@ -6,7 +6,7 @@ module.exports = class PluginHarmonyOSSansTwemoji extends require('siyuan').Plug
 
         // 创建 style 元素
         const styleElement = document.createElement('style');
-        styleElement.id = 'snippetCSS-HarmonyOSSansTwemoji';
+        styleElement.id = 'snippetCSS-HarmonyOSSansTwemoji'; // id 以 snippet 开头的 style 会被添加到导出 PDF 中 https://github.com/siyuan-note/siyuan/commit/4318aa446369eaf4ea85982ba4919b5d47340552
 
         // 插入到 head 中
         document.head.appendChild(styleElement);
