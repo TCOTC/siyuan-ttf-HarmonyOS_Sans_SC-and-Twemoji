@@ -1,0 +1,72 @@
+/* 基础字体 */
+@font-face {
+    font-family: "HarmonyOS Sans";
+    src: url('../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/HarmonyOS_Sans/HarmonyOS_Sans/HarmonyOS_Sans_Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "HarmonyOS Sans";
+    src: url('../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/HarmonyOS_Sans/HarmonyOS_Sans/HarmonyOS_Sans_Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 基础斜体 */
+@font-face {
+    font-family: "HarmonyOS Sans";
+    src: url('../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/HarmonyOS_Sans/HarmonyOS_Sans_Italic/HarmonyOS_Sans_Regular_Italic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: "HarmonyOS Sans";
+    src: url('../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/HarmonyOS_Sans/HarmonyOS_Sans_Italic/HarmonyOS_Sans_Bold_Italic.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* 简体中文 */
+@font-face {
+    font-family: 'HarmonyOS Sans SC';
+    src: url('../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/HarmonyOS_Sans/HarmonyOS_Sans_SC/HarmonyOS_SansSC_Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'HarmonyOS Sans SC';
+    src: url('../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/HarmonyOS_Sans/HarmonyOS_Sans_SC/HarmonyOS_SansSC_Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 阿拉伯语 */
+@font-face {
+    font-family: 'HarmonyOS Sans Naskh Arabic';
+    src: url('../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/HarmonyOS_Sans/HarmonyOS_Sans_Naskh_Arabic/HarmonyOS_Sans_Naskh_Arabic_Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'HarmonyOS Sans Naskh Arabic';
+    src: url('../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/HarmonyOS_Sans/HarmonyOS_Sans_Naskh_Arabic/HarmonyOS_Sans_Naskh_Arabic_Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Twemoji */
+@font-face {
+    font-family: "Twemoji";
+    src: url("../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/Twemoji/Twemoji-15.1.0.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}

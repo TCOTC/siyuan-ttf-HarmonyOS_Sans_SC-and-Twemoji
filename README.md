@@ -1,8 +1,8 @@
-> Recent Updates: Added Bold weight, optimized bold display.
+> Recent Updates: Fixed the issue of missing text in exported image after version v3.1.25.
 
 # HarmonyOS Sans and Twemoji
 
-Font files sourced from: [HarmonyOS Design Resources](https://developer.huawei.com/consumer/cn/design/resource/)
+Font files sourced from: [HarmonyOS Design Resources](https://developer.huawei.com/consumer/cn/design/resource/). The font files was converted from .ttf to .woff format using [CloudConvert](https://cloudconvert.com/ttf-to-woff).
 
 Emoji files sourced from: [jdecked/twemoji](https://github.com/jdecked/twemoji): https://artefacts.whynothugo.nl/twemoji.ttf
 
