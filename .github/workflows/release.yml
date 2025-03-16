@@ -13,7 +13,7 @@ jobs:
       with:
         type: 'zip'
         filename: 'package.zip'
-        exclusions: '*.git* /*LICENSE/* /*Backup/*'
+        exclusions: '*.git* /*LICENSE /*Backup/*'
 
     - name: Upload Release
       uses: ncipollo/release-action@v1
