@@ -32,14 +32,14 @@
 
 /* 简体中文 */
 @font-face {
-  font-family: '鸿蒙黑体';
+  font-family: 'HarmonyOS Sans SC';
   src: url('../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/HarmonyOS_Sans/HarmonyOS_SansSC/HarmonyOS_SansSC_Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: '鸿蒙黑体';
+  font-family: 'HarmonyOS Sans SC';
   src: url('../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/HarmonyOS_Sans/HarmonyOS_SansSC/HarmonyOS_SansSC_Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
@@ -72,14 +72,14 @@
 }
 
 :root {
-  --b3-font-family: "HarmonyOS Sans", "鸿蒙黑体", "HarmonyOS Sans Naskh Arabic", "Twemoji", "Emojis Additional", "Emojis Reset", BlinkMacSystemFont, Helvetica, "Luxi Sans", "DejaVu Sans", arial, sans-serif, emojis !important;
+  --b3-font-family: "HarmonyOS Sans", "HarmonyOS Sans SC", "HarmonyOS Sans Naskh Arabic", "Twemoji", "Emojis Additional", "Emojis Reset", BlinkMacSystemFont, Helvetica, "Luxi Sans", "DejaVu Sans", arial, sans-serif, emojis !important;
   --b3-font-family-emoji: "Twemoji", "Emojis Additional", emojis !important;
 }
 
 :root:lang(zh_CN) {
-  --b3-font-family: "HarmonyOS Sans", "鸿蒙黑体", "HarmonyOS Sans Naskh Arabic", "Twemoji", "Emojis Additional", "Emojis Reset", BlinkMacSystemFont, Helvetica, "PingFang SC", "Luxi Sans", "DejaVu Sans", arial, "Microsoft Yahei", "Hiragino Sans GB", "Source Han Sans SC", sans-serif, emojis !important;
+  --b3-font-family: "HarmonyOS Sans", "HarmonyOS Sans SC", "HarmonyOS Sans Naskh Arabic", "Twemoji", "Emojis Additional", "Emojis Reset", BlinkMacSystemFont, Helvetica, "PingFang SC", "Luxi Sans", "DejaVu Sans", arial, "Microsoft Yahei", "Hiragino Sans GB", "Source Han Sans SC", sans-serif, emojis !important;
 }
 
 :root:lang(ar_SA) {
-  --b3-font-family: "HarmonyOS Sans", "HarmonyOS Sans Naskh Arabic", "鸿蒙黑体", "Twemoji", "Emojis Additional", "Emojis Reset", BlinkMacSystemFont, Helvetica, "Luxi Sans", "DejaVu Sans", arial, sans-serif, emojis !important;
+  --b3-font-family: "HarmonyOS Sans", "HarmonyOS Sans Naskh Arabic", "HarmonyOS Sans SC", "Twemoji", "Emojis Additional", "Emojis Reset", BlinkMacSystemFont, Helvetica, "Luxi Sans", "DejaVu Sans", arial, sans-serif, emojis !important;
 }

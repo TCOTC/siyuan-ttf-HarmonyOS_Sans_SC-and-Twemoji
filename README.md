@@ -2,9 +2,9 @@
 
 # HarmonyOS Sans and Twemoji
 
-Font files sourced from: [HarmonyOS Design Resources](https://developer.huawei.com/consumer/cn/design/resource/)/[Developer Documentation](https://developer.huawei.com/consumer/cn/doc/design-guides/font-0000001828772001). Converted from .ttf format to .woff format using [CloudConvert](https://cloudconvert.com/ttf-to-woff).
+HarmonyOS Sans font files sourced from: [HarmonyOS Design Resources](https://developer.huawei.com/consumer/cn/design/resource/)/[Developer Documentation](https://developer.huawei.com/consumer/cn/doc/design-guides/font-0000001828772001). Converted from .ttf format to .woff format using [CloudConvert](https://cloudconvert.com/ttf-to-woff).
 
-Emoji font file sourced from: [jdecked/twemoji](https://github.com/jdecked/twemoji): https://artefacts.whynothugo.nl/twemoji.ttf
+Twemoji font file sourced from: [jdecked/twemoji](https://github.com/jdecked/twemoji): https://artefacts.whynothugo.nl/twemoji.ttf
 
 ### Notes
 

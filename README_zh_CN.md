@@ -2,9 +2,9 @@
 
 # 鸿蒙黑体(简)和 Twemoji
 
-字体文件来自：[鸿蒙系统设计资源](https://developer.huawei.com/consumer/cn/design/resource/)/[开发者文档](https://developer.huawei.com/consumer/cn/doc/design-guides/font-0000001828772001)，由 .ttf 格式[转换](https://cloudconvert.com/ttf-to-woff)为 .woff 格式
+鸿蒙字体文件来自：[鸿蒙系统设计资源](https://developer.huawei.com/consumer/cn/design/resource/)/[开发者文档](https://developer.huawei.com/consumer/cn/doc/design-guides/font-0000001828772001)，由 .ttf 格式[转换](https://cloudconvert.com/ttf-to-woff)为 .woff 格式
 
-Emoji 字体文件来自：[jdecked/twemoji](https://github.com/jdecked/twemoji)：https://artefacts.whynothugo.nl/twemoji.ttf
+Twemoji 字体文件来自：[jdecked/twemoji](https://github.com/jdecked/twemoji)：https://artefacts.whynothugo.nl/twemoji.ttf
 
 ### 注意
 
