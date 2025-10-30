@@ -1,15 +1,15 @@
-> Recent Updates: Fixed the issue of missing text in exported image after version v3.1.25.
+> Recent update: HarmonyOS Sans upgraded from v1.9 to v2.400, Twemoji upgraded from v15.1.0 to v16.0.1
 
 # HarmonyOS Sans and Twemoji
 
-Font files sourced from: [HarmonyOS Design Resources](https://developer.huawei.com/consumer/cn/design/resource/). The font files was converted from .ttf to .woff format using [CloudConvert](https://cloudconvert.com/ttf-to-woff).
+Font files sourced from: [HarmonyOS Design Resources](https://developer.huawei.com/consumer/cn/design/resource/)/[Developer Documentation](https://developer.huawei.com/consumer/cn/doc/design-guides/font-0000001828772001). Converted from .ttf format to .woff format using [CloudConvert](https://cloudconvert.com/ttf-to-woff).
 
-Emoji files sourced from: [jdecked/twemoji](https://github.com/jdecked/twemoji): https://artefacts.whynothugo.nl/twemoji.ttf
+Emoji font file sourced from: [jdecked/twemoji](https://github.com/jdecked/twemoji): https://artefacts.whynothugo.nl/twemoji.ttf
 
 ### Notes
 
-- This plugin may not be compatible with other font or Emoji plugins available in the marketplace. Please disable other font or Emoji plugins when using this one.
-- Does not include traditional Chinese glyphs, as the HarmonyOS font does not fully support traditional characters.
+- This plugin may be incompatible with other font or Emoji plugins in the marketplace. Please disable other font or Emoji plugins when using this one.
+- Traditional Chinese glyphs are not included because HarmonyOS Sans does not fully support traditional characters.
 
 ### Acknowledgments
 

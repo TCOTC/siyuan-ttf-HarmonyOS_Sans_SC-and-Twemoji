@@ -1,10 +1,10 @@
-> 近期更新：解决 v3.1.25 版本之后导出图片不显示文字的问题
+> 近期更新：鸿蒙字体从 v1.9 升级到 v2.400，Twemoji 从 15.1.0 升级到 v16.0.1
 
-# 鸿蒙简体和 Twemoji
+# 鸿蒙黑体(简)和 Twemoji
 
-字体文件来自：[鸿蒙系统设计资源](https://developer.huawei.com/consumer/cn/design/resource/)，由 .ttf 格式[转换](https://cloudconvert.com/ttf-to-woff)为 .woff 格式
+字体文件来自：[鸿蒙系统设计资源](https://developer.huawei.com/consumer/cn/design/resource/)/[开发者文档](https://developer.huawei.com/consumer/cn/doc/design-guides/font-0000001828772001)，由 .ttf 格式[转换](https://cloudconvert.com/ttf-to-woff)为 .woff 格式
 
-Emoji 文件来自：[jdecked/twemoji](https://github.com/jdecked/twemoji)：https://artefacts.whynothugo.nl/twemoji.ttf
+Emoji 字体文件来自：[jdecked/twemoji](https://github.com/jdecked/twemoji)：https://artefacts.whynothugo.nl/twemoji.ttf
 
 ### 注意
 
