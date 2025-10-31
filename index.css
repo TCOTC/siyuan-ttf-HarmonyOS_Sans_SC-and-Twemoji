@@ -4,14 +4,14 @@
   src: url('../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/HarmonyOS_Sans/HarmonyOS_Sans/HarmonyOS_Sans_Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
-  font-display: auto;
+  font-display: swap;
 }
 @font-face {
   font-family: "HarmonyOS Sans";
   src: url('../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/HarmonyOS_Sans/HarmonyOS_Sans/HarmonyOS_Sans_Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
-  font-display: auto;
+  font-display: swap;
 }
 
 /* 基础斜体 */
@@ -20,14 +20,14 @@
   src: url('../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/HarmonyOS_Sans/HarmonyOS_Sans_Italic/HarmonyOS_SansItalic_Regular.woff') format('woff');
   font-weight: 400;
   font-style: italic;
-  font-display: auto;
+  font-display: swap;
 }
 @font-face {
   font-family: "HarmonyOS Sans";
   src: url('../plugins/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji/HarmonyOS_Sans/HarmonyOS_Sans_Italic/HarmonyOS_SansItalic_Bold.woff') format('woff');
   font-weight: 700;
   font-style: italic;
-  font-display: auto;
+  font-display: swap;
 }
 
 /* 简体中文 */
