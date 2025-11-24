@@ -11,7 +11,7 @@ module.exports = class F extends require('siyuan').Plugin {
                 return response.text();
             })
             .then(css => {
-                this.s.id = 'snippetCSS-' + this.name; // id 以 snippet 开头的 style 会被添加到导出 PDF 中 https://github.com/siyuan-note/siyuan/commit/4318aa446369eaf4ea85982ba4919b5d47340552
+                this.s.id = 'snippetCSS-' + this.name; // id 以 snippetCSS 开头的 style 会被添加到导出 PDF 中 https://github.com/siyuan-note/siyuan/commit/4318aa446369eaf4ea85982ba4919b5d47340552 https://github.com/siyuan-note/siyuan/commit/0361599aba79a200c410aa9de5873da4a52b2667
                 this.s.textContent = css;
                 document.head.appendChild(this.s);
 
