@@ -36,6 +36,15 @@ export default class HarmonyOSFontPlugin extends Plugin {
         console.log(this.displayName, "unloaded");
     }
 
+    async uninstall() {
+        this.removeData(STORAGE_KEY).catch(e => {
+            const message = `uninstall [${this.name}] remove data [${STORAGE_KEY}] fail: ${e.msg}`
+            showMessage(message, 0, "error");
+            console.error(message);
+        });
+        console.log(this.displayName, "uninstalled");
+    }
+
     openSetting() {
         this.setting.open(this.displayName);
     }
