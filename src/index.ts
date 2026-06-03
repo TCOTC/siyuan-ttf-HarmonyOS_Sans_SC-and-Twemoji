@@ -183,7 +183,7 @@ export default class HarmonyOSFontPlugin extends Plugin {
                 document.fonts.load('italic 400 16px "HarmonyOS Sans"', "3");
                 document.fonts.load('italic 700 16px "HarmonyOS Sans"', "4");
                 if (this.config.emojiFont) {
-                    document.fonts.load('400 16px "Twemoji"', "5");
+                    document.fonts.load('400 16px "Twemoji"', "😀");
                 }
             } catch (_) {}
         }, 0);
