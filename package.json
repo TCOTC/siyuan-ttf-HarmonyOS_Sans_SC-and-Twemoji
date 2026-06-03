@@ -1,0 +1,41 @@
+{
+  "name": "siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji",
+  "version": "2.0.0",
+  "description": "HarmonyOS Sans SC & Twemoji font plugin for SiYuan",
+  "main": "index.js",
+  "scripts": {
+    "format": "dprint fmt",
+    "format:check": "dprint check",
+    "lint": "eslint . --fix --cache",
+    "dev": "webpack --config webpack.config.js --mode development",
+    "build": "webpack --config webpack.config.js --mode production"
+  },
+  "keywords": ["font", "Twemoji", "HarmonyOS"],
+  "author": "Jeffrey Chen",
+  "license": "MIT",
+  "packageManager": "pnpm@11.4.0",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.5",
+    "@eslint/js": "^10.0.1",
+    "@typescript-eslint/eslint-plugin": "^8.60.0",
+    "@typescript-eslint/parser": "^8.60.0",
+    "copy-webpack-plugin": "^14.0.0",
+    "css-loader": "^7.1.4",
+    "dprint": "latest",
+    "esbuild-loader": "^4.4.3",
+    "eslint": "^10.4.0",
+    "globals": "^17.6.0",
+    "mini-css-extract-plugin": "^2.10.2",
+    "sass": "^1.100.0",
+    "sass-loader": "^17.0.0",
+    "siyuan": "1.2.2-alpha.0",
+    "tslib": "^2.8.1",
+    "typescript": "^6.0.3",
+    "webpack": "^5.107.2",
+    "webpack-cli": "^7.0.3",
+    "zip-webpack-plugin": "^4.0.3"
+  }
+}

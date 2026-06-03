@@ -1,26 +1,26 @@
 {
   "name": "siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji",
-  "author": "TCOTC",
+  "author": "Jeffrey Chen",
   "url": "https://github.com/TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji",
-  "version": "1.2.4",
+  "version": "2.0.0",
   "minAppVersion": "3.2.0",
   "backends": ["all"],
   "frontends": ["all"],
   "disabledInPublish": false,
   "displayName": {
-    "default": "HarmonyOS Sans and Twemoji",
-    "zh_CN": "鸿蒙黑体(简)和 Twemoji"
+    "default": "HarmonyOS Sans & Twemoji",
+    "zh_CN": "鸿蒙黑体 & Twemoji"
   },
   "description": {
-    "default": "HarmonyOS Sans & Twemoji",
-    "zh_CN": "HarmonyOS Sans SC & Twemoji"
+    "default": "Use HarmonyOS Sans and Twemoji in SiYuan",
+    "zh_CN": "在思源笔记中使用鸿蒙黑体和 Twemoji"
   },
   "readme": {
     "default": "README.md",
     "zh_CN": "README_zh_CN.md"
   },
   "funding": {
-    "custom": ["https://bento.me/jeffff"]
+    "custom": ["https://mytemos.com/"]
   },
   "keywords": ["font","Twitter Emoji","鸿蒙字体","表情包","表情符号","图标","icon"]
 }
