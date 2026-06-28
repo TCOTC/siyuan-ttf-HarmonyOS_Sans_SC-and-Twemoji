@@ -3,21 +3,21 @@
   "author": "Jeffrey Chen",
   "url": "https://github.com/TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji",
   "version": "2.0.0",
-  "minAppVersion": "3.2.0",
+  "minAppVersion": "3.7.0-beta.1",
   "backends": ["all"],
   "frontends": ["all"],
   "disabledInPublish": false,
   "displayName": {
     "default": "HarmonyOS Sans & Twemoji",
-    "zh_CN": "鸿蒙黑体 & Twemoji"
+    "zh-CN": "鸿蒙黑体 & Twemoji"
   },
   "description": {
     "default": "Use HarmonyOS Sans and Twemoji in SiYuan",
-    "zh_CN": "在思源笔记中使用鸿蒙黑体和 Twemoji"
+    "zh-CN": "在思源笔记中使用鸿蒙黑体和 Twemoji"
   },
   "readme": {
     "default": "README.md",
-    "zh_CN": "README_zh_CN.md"
+    "zh-CN": "README.zh-CN.md"
   },
   "funding": {
     "custom": ["https://mytemos.com/"]

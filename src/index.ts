@@ -1,4 +1,4 @@
-type PluginI18n = typeof import("./i18n/zh_CN.json");
+type PluginI18n = typeof import("./i18n/zh-CN.json");
 import "./index.scss";
 import {Plugin, Setting, showMessage} from "siyuan";
 
@@ -38,7 +38,7 @@ export default class HarmonyOSFontPlugin extends Plugin {
 
     async uninstall() {
         this.removeData(STORAGE_KEY).catch(e => {
-            const message = `uninstall [${this.name}] remove data [${STORAGE_KEY}] fail: ${e.msg}`
+            const message = `uninstall [${this.name}] remove data [${STORAGE_KEY}] fail: ${e.msg}`;
             showMessage(message, 0, "error");
             console.error(message);
         });
@@ -135,7 +135,7 @@ export default class HarmonyOSFontPlugin extends Plugin {
         const lang = window.siyuan.config.appearance.lang; // 不能用 document.documentElement.lang，因为插件启动时这个属性可能还不存在
         let harmonyOS: string;
         switch (lang) {
-            case "ar_SA":
+            case "ar":
                 harmonyOS = `${sans}, ${naskh}, ${sc}`;
                 break;
             default:
@@ -144,7 +144,7 @@ export default class HarmonyOSFontPlugin extends Plugin {
         }
         let fallback: string;
         switch (lang) {
-            case "zh_CN":
+            case "zh-CN":
                 fallback = `${fallbackHead}"PingFang SC", ${fallbackMid}"Microsoft Yahei", "Hiragino Sans GB", "Source Han Sans SC", ${fallbackEnd}`;
                 break;
             default:
