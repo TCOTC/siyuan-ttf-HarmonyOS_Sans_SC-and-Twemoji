@@ -1,4 +1,4 @@
-> Recent update: Twemoji upgraded from v16.0.1 to v17.0.3 and switched to a COLRv1 font file
+> Recent update: Twemoji switched to a COLRv0 font file for WebKit compatibility
 
 # HarmonyOS Sans and Twemoji
 

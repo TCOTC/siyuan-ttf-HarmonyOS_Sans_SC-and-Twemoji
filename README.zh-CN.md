@@ -1,4 +1,4 @@
-> 近期更新：Twemoji 从 v16.0.1 升级到 v17.0.3 并更换为 COLRv1 字体文件
+> 近期更新：Twemoji 更换为 COLRv0 字体文件以兼容 WebKit
 
 # 鸿蒙黑体 & Twemoji
 
