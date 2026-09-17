@@ -163,14 +163,18 @@ export default class HarmonyOSFontPlugin extends Plugin {
         // 生成的全部字体栈变量：--b3-font-family 由 globalFont.ts 插入用户的全局默认字体，
         // --b3-font-family-editor 由 setInlineStyle 设为用户的编辑器字体
         // 自定义属性的变量替换在声明它的元素上完成，故 :root 上的字体栈必须整体改写
+        // 文字字体排在 emoji 前缀之前，与插件改写变量之前的字体栈顺序保持一致
         // https://github.com/siyuan-note/siyuan/issues/19148
         // https://github.com/siyuan-note/siyuan/issues/16923
-        const stack = `var(--b3-font-family-emoji-reset), ${harmonyOS}, ${fallback}`;
-        const weight = `font-weight: ${DEFAULT_FONT_WEIGHT} !important`;
+        const stack = `${harmonyOS}, var(--b3-font-family-emoji-reset), ${fallback}`;
+        // body 等元素与 globalFont.ts 的规则同为元素选择器，靠样式表顺序生效，无需 !important
+        const bodyWeight = `font-weight: ${DEFAULT_FONT_WEIGHT}`;
+        // 编辑器元素需要压过 setInlineStyle 的 .b3-typography:not(...)（特异性 0,2,0）
+        const editorWeight = `${bodyWeight} !important`;
         if (fontScope === "both") {
             rules.push(`:root:lang(${lang}) { --b3-font-family-default: ${stack} !important; --b3-font-family-editor: ${stack} !important; --b3-font-family: ${stack} !important; }`);
             // globalFont.ts 会按用户选择的全局字体给以下元素写入 font-weight
-            rules.push(`body, button, input, select, textarea { ${weight}; }`);
+            rules.push(`body, button, input, select, textarea { ${bodyWeight}; }`);
         } else if (fontScope === "editor") {
             // 这三个变量都会被编辑器元素的 font-family 直接引用，替换在该元素上完成，可以在此覆盖；
             // --b3-font-family-protyle 用于未配置编辑器字体时，--b3-font-family-editor 与
@@ -179,7 +183,7 @@ export default class HarmonyOSFontPlugin extends Plugin {
         }
         if (fontScope !== "none") {
             // setInlineStyle 会按用户选择的编辑器字体给编辑器元素写入 font-weight
-            rules.push(`${EDITOR_FONT_SELECTORS} { ${weight}; }`);
+            rules.push(`${EDITOR_FONT_SELECTORS} { ${editorWeight}; }`);
         }
 
         if (emojiFont) {
