@@ -1,6 +1,6 @@
 {
   "scopeTitle": "HarmonyOS Sans",
-  "scopeDesc": "Choose where HarmonyOS Sans is applied",
+  "scopeDesc": "Choose where HarmonyOS Sans is applied, ignoring fonts set in SiYuan Settings",
   "scopeBoth": "UI and editor",
   "scopeEditor": "Editor only",
   "scopeNone": "Disabled",

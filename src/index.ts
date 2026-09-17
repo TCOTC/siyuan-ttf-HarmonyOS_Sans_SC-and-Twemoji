@@ -16,6 +16,13 @@ const DEFAULT_CONFIG: FontConfig = {
     emojiFont: true,
 };
 
+// 编辑器内承载字体栈的元素，与 SiYuan 内核的取值保持一致
+// https://github.com/siyuan-note/siyuan/issues/16923
+const EDITOR_FONT_SELECTORS = ".b3-typography, .protyle-wysiwyg, .protyle-title, .table__cell-rich";
+
+// 鸿蒙黑体只提供 400 与 700 两个字重，沿用「设置 - 外观」中选择的字体字重会触发合成加粗
+const DEFAULT_FONT_WEIGHT = 400;
+
 export default class HarmonyOSFontPlugin extends Plugin {
     declare i18n: PluginI18n;
 
@@ -129,8 +136,8 @@ export default class HarmonyOSFontPlugin extends Plugin {
         const fallbackHead = "BlinkMacSystemFont, Helvetica, ";
         const fallbackMid = '"Luxi Sans", "DejaVu Sans", arial, ';
         const fallbackEnd = "sans-serif, emojis";
-        const emojiReset = '"Emojis Additional", "Emojis Reset", ';
-        const emoji = emojiFont ? `"Twemoji", ${emojiReset}` : emojiReset;
+        const emojiReset = '"Emojis Additional", "Emojis Reset"';
+        const emojiStack = emojiFont ? `"Twemoji", ${emojiReset}` : emojiReset;
 
         const lang = window.siyuan.config.appearance.lang; // 不能用 document.documentElement.lang，因为插件启动时这个属性可能还不存在
         let harmonyOS: string;
@@ -151,19 +158,33 @@ export default class HarmonyOSFontPlugin extends Plugin {
                 fallback = `${fallbackHead}${fallbackMid}${fallbackEnd}`;
                 break;
         }
-        const stack = `${harmonyOS}, ${emoji}${fallback}`;
-        const parts: string[] = [];
+
+        // 本插件的字体优先于「设置 - 外观」中的全局默认字体与编辑器字体，因此需要改写 SiYuan
+        // 生成的全部字体栈变量：--b3-font-family 由 globalFont.ts 插入用户的全局默认字体，
+        // --b3-font-family-editor 由 setInlineStyle 设为用户的编辑器字体
+        // 自定义属性的变量替换在声明它的元素上完成，故 :root 上的字体栈必须整体改写
+        // https://github.com/siyuan-note/siyuan/issues/19148
+        // https://github.com/siyuan-note/siyuan/issues/16923
+        const stack = `var(--b3-font-family-emoji-reset), ${harmonyOS}, ${fallback}`;
+        const weight = `font-weight: ${DEFAULT_FONT_WEIGHT} !important`;
         if (fontScope === "both") {
-            parts.push(`--b3-font-family: ${stack} !important`);
+            rules.push(`:root:lang(${lang}) { --b3-font-family-default: ${stack} !important; --b3-font-family-editor: ${stack} !important; --b3-font-family: ${stack} !important; }`);
+            // globalFont.ts 会按用户选择的全局字体给以下元素写入 font-weight
+            rules.push(`body, button, input, select, textarea { ${weight}; }`);
+        } else if (fontScope === "editor") {
+            // 这三个变量都会被编辑器元素的 font-family 直接引用，替换在该元素上完成，可以在此覆盖；
+            // --b3-font-family-protyle 用于未配置编辑器字体时，--b3-font-family-editor 与
+            // --b3-font-family 用于已配置编辑器字体时
+            rules.push(`${EDITOR_FONT_SELECTORS} { --b3-font-family-protyle: ${stack} !important; --b3-font-family-editor: ${stack} !important; --b3-font-family: ${stack} !important; }`);
         }
-        if (["both", "editor"].includes(fontScope)) {
-            parts.push(`--b3-font-family-protyle: ${stack} !important`);
-        }
-        if (parts.length) {
-            rules.push(`:root:lang(${lang}) { ${parts.join("; ")}; }`);
+        if (fontScope !== "none") {
+            // setInlineStyle 会按用户选择的编辑器字体给编辑器元素写入 font-weight
+            rules.push(`${EDITOR_FONT_SELECTORS} { ${weight}; }`);
         }
 
         if (emojiFont) {
+            // emoji 前缀由该变量承载，覆盖它 Twemoji 才能排在 "Emojis Additional" 之前
+            rules.push(`:root { --b3-font-family-emoji-reset: ${emojiStack} !important; }`);
             rules.push(':root { --b3-font-family-emoji: "Twemoji", "Emojis Additional", emojis !important; }');
         }
 
