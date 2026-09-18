@@ -42,17 +42,20 @@ export default class HarmonyOSFontPlugin extends Plugin {
 
     private readonly overrideStyle = document.createElement("style");
     private config: FontConfig = {...DEFAULT_CONFIG};
+    private inlineStyleObserver?: MutationObserver;
 
     onload() {
         this.loadConfig().then(() => {
             this.initSetting();
             this.applyFontOverrides();
+            this.watchInlineStyle();
             this.preloadFonts();
             console.log(this.displayName, "loaded");
         });
     }
 
     onunload() {
+        this.inlineStyleObserver?.disconnect();
         this.overrideStyle.remove();
         console.log(this.displayName, "unloaded");
     }
@@ -231,6 +234,29 @@ export default class HarmonyOSFontPlugin extends Plugin {
         } else {
             this.overrideStyle.remove();
         }
+    }
+
+    // 「界面」模式按 SiYuan 的字体字重恢复编辑器元素的字重，而 SiYuan 在字体设置变化时会原地
+    // 重写 #siyuanStyle（setInlineStyle），插件规则会停留在旧值，故监听该元素并在内容变化时
+    // 重新生成规则；该元素由 onGetConfig 创建，晚于插件加载，未出现时先监听 head
+    private watchInlineStyle() {
+        const observeElement = (siyuanStyle: HTMLElement) => {
+            this.inlineStyleObserver?.disconnect();
+            this.inlineStyleObserver = new MutationObserver(() => this.applyFontOverrides());
+            this.inlineStyleObserver.observe(siyuanStyle, {childList: true});
+        };
+        const siyuanStyle = document.getElementById("siyuanStyle");
+        if (siyuanStyle) {
+            observeElement(siyuanStyle);
+            return;
+        }
+        this.inlineStyleObserver = new MutationObserver(() => {
+            const element = document.getElementById("siyuanStyle");
+            if (element) {
+                observeElement(element);
+            }
+        });
+        this.inlineStyleObserver.observe(document.head, {childList: true});
     }
 
     private preloadFonts() {
