@@ -2,6 +2,7 @@
   "scopeTitle": "HarmonyOS Sans",
   "scopeDesc": "Choose where HarmonyOS Sans is applied, ignoring fonts set in SiYuan Settings",
   "scopeBoth": "UI and editor",
+  "scopeUI": "UI only",
   "scopeEditor": "Editor only",
   "scopeNone": "Disabled",
   "emojiTitle": "Twemoji",

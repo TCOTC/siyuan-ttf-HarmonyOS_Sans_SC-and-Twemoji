@@ -4,7 +4,7 @@ import {Plugin, Setting, showMessage} from "siyuan";
 
 const STORAGE_KEY = "settings.json";
 
-type FontScope = "both" | "editor" | "none";
+type FontScope = "both" | "ui" | "editor" | "none";
 
 interface FontConfig {
     fontScope: FontScope;
@@ -20,8 +20,22 @@ const DEFAULT_CONFIG: FontConfig = {
 // https://github.com/siyuan-note/siyuan/issues/16923
 const EDITOR_FONT_SELECTORS = ".b3-typography, .protyle-wysiwyg, .protyle-title, .table__cell-rich";
 
+// 界面内直接引用 --b3-font-family 的元素，其余界面元素从 body 继承字体；
+// .b3-tooltips::after 为提示气泡文本，.protyle-attr 为编辑器内的块属性浮层
+const UI_FONT_SELECTORS = "body, button, input, select, textarea, .b3-tooltips::after, .protyle-attr";
+
+// 编辑器内需要保留 SiYuan 设置的字体字重的元素：前三个在配置了编辑器字体时由 setInlineStyle
+// 写入字重，.table__cell-rich 与其余元素从 body 继承全局字体字重；
+// .b3-typography--default 用于渲染界面内的富文本，按界面文字处理，不含在内
+const EDITOR_WEIGHT_SELECTORS = ".b3-typography:not(.b3-typography--default), .protyle-wysiwyg, .protyle-title, .table__cell-rich";
+
 // 鸿蒙黑体只提供 400 与 700 两个字重，沿用「设置 - 外观」中选择的字体字重会触发合成加粗
 const DEFAULT_FONT_WEIGHT = 400;
+
+// SiYuan 3.8.2 起字体配置由 appearance.globalFontFamilies 与 editor.fontFamilies 给出，
+// 而 siyuan 类型包尚未声明这两个字段，此处按运行时的结构读取
+const readFirstFontWeight = (holder: unknown, key: string): number | undefined =>
+    (holder as Record<string, Array<{weight?: number}> | undefined>)[key]?.[0]?.weight;
 
 export default class HarmonyOSFontPlugin extends Plugin {
     declare i18n: PluginI18n;
@@ -98,6 +112,7 @@ export default class HarmonyOSFontPlugin extends Plugin {
                 fontScopeSelect.className = "b3-select fn__flex-center fn__size200";
                 const fontScopeOptions: [FontScope, string][] = [
                     ["both", this.i18n.scopeBoth],
+                    ["ui", this.i18n.scopeUI],
                     ["editor", this.i18n.scopeEditor],
                     ["none", this.i18n.scopeNone],
                 ];
@@ -159,9 +174,9 @@ export default class HarmonyOSFontPlugin extends Plugin {
                 break;
         }
 
-        // 本插件的字体优先于「设置 - 外观」中的全局默认字体与编辑器字体，因此需要改写 SiYuan
-        // 生成的全部字体栈变量：--b3-font-family 由 globalFont.ts 插入用户的全局默认字体，
-        // --b3-font-family-editor 由 setInlineStyle 设为用户的编辑器字体
+        // 「界面和编辑器」与「编辑器」需要改写 SiYuan 生成的全部字体栈变量，使本插件的字体优先于
+        // 「设置 - 外观」中的全局默认字体与编辑器字体：--b3-font-family 由 globalFont.ts 插入用户的
+        // 全局默认字体，--b3-font-family-editor 由 setInlineStyle 设为用户的编辑器字体
         // 自定义属性的变量替换在声明它的元素上完成，故 :root 上的字体栈必须整体改写
         // 文字字体排在 emoji 前缀之前，与插件改写变量之前的字体栈顺序保持一致
         // https://github.com/siyuan-note/siyuan/issues/19148
@@ -175,13 +190,25 @@ export default class HarmonyOSFontPlugin extends Plugin {
             rules.push(`:root:lang(${lang}) { --b3-font-family-default: ${stack} !important; --b3-font-family-editor: ${stack} !important; --b3-font-family: ${stack} !important; }`);
             // globalFont.ts 会按用户选择的全局字体给以下元素写入 font-weight
             rules.push(`body, button, input, select, textarea { ${bodyWeight}; }`);
+        } else if (fontScope === "ui") {
+            // 界面元素的字体来自 :root 上的 --b3-font-family，而编辑器元素引用同一个变量，改写该变量
+            // 会让本插件的字体进入编辑器与文档，因此改在界面元素上直接声明字体；
+            // 字重与字体一并声明，否则界面会沿用「设置 - 外观」中的字体字重，与鸿蒙黑体的可用字重不匹配
+            rules.push(`${UI_FONT_SELECTORS} { font-family: ${stack}; ${bodyWeight}; }`);
+            // 编辑器元素自身未声明 font-weight 时从 body 继承，故按 SiYuan 的取值恢复，
+            // 使界面模式的覆盖不进入编辑器与文档
+            const editorFontWeight = readFirstFontWeight(window.siyuan.config.editor, "fontFamilies") ||
+                readFirstFontWeight(window.siyuan.config.appearance, "globalFontFamilies") || DEFAULT_FONT_WEIGHT;
+            if (editorFontWeight !== DEFAULT_FONT_WEIGHT) {
+                rules.push(`${EDITOR_WEIGHT_SELECTORS} { font-weight: ${editorFontWeight}; }`);
+            }
         } else if (fontScope === "editor") {
             // 这三个变量都会被编辑器元素的 font-family 直接引用，替换在该元素上完成，可以在此覆盖；
             // --b3-font-family-protyle 用于未配置编辑器字体时，--b3-font-family-editor 与
             // --b3-font-family 用于已配置编辑器字体时
             rules.push(`${EDITOR_FONT_SELECTORS} { --b3-font-family-protyle: ${stack} !important; --b3-font-family-editor: ${stack} !important; --b3-font-family: ${stack} !important; }`);
         }
-        if (fontScope !== "none") {
+        if (fontScope === "both" || fontScope === "editor") {
             // setInlineStyle 会按用户选择的编辑器字体给编辑器元素写入 font-weight
             rules.push(`${EDITOR_FONT_SELECTORS} { ${editorWeight}; }`);
         }

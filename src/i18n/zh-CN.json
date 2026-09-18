@@ -2,6 +2,7 @@
   "scopeTitle": "鸿蒙黑体",
   "scopeDesc": "选择鸿蒙黑体的应用范围，忽略思源笔记设置中的字体",
   "scopeBoth": "界面和编辑器",
+  "scopeUI": "界面",
   "scopeEditor": "编辑器",
   "scopeNone": "禁用",
   "emojiTitle": "Twemoji 字体",
