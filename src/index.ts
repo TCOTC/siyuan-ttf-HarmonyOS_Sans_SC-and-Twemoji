@@ -69,10 +69,6 @@ export default class HarmonyOSFontPlugin extends Plugin {
         console.log(this.displayName, "uninstalled");
     }
 
-    openSetting() {
-        this.setting.open(this.displayName);
-    }
-
     private async loadConfig() {
         try {
             const data = await this.loadData(STORAGE_KEY) as Partial<FontConfig>;

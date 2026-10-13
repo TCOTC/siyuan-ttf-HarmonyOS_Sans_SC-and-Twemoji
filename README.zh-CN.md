@@ -1,5 +1,3 @@
-> 近期更新：适配 SiYuan v3.8.2、v3.8.3 的字体配置功能变更；Twemoji 更换为 COLRv0 字体文件以兼容 WebKit
-
 # 鸿蒙黑体 & Twemoji
 
 鸿蒙黑体文件来自：[鸿蒙系统设计资源](https://developer.huawei.com/consumer/cn/design/resource/)/[开发者文档](https://developer.huawei.com/consumer/cn/doc/design-guides/font-0000001828772001)，由 .ttf 格式[转换](https://cloudconvert.com/ttf-to-woff)为 .woff 格式

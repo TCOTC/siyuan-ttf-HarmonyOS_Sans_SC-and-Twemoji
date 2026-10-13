@@ -1,5 +1,3 @@
-> Recent update: support for the font configuration changes in SiYuan v3.8.2 and v3.8.3; Twemoji switched to a COLRv0 font file for WebKit compatibility
-
 # HarmonyOS Sans and Twemoji
 
 HarmonyOS Sans font files sourced from: [HarmonyOS Design Resources](https://developer.huawei.com/consumer/cn/design/resource/)/[Developer Documentation](https://developer.huawei.com/consumer/cn/doc/design-guides/font-0000001828772001). Converted from .ttf format to .woff format using [CloudConvert](https://cloudconvert.com/ttf-to-woff).
