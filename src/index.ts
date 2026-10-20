@@ -16,18 +16,19 @@ const DEFAULT_CONFIG: FontConfig = {
     emojiFont: true,
 };
 
-// 编辑器内承载字体栈的元素，与 SiYuan 内核的取值保持一致
+// 编辑器内承载字体栈与字重的元素，与 SiYuan 的 setInlineStyle 取值完全一致
 // https://github.com/siyuan-note/siyuan/issues/16923
-const EDITOR_FONT_SELECTORS = ".b3-typography, .protyle-wysiwyg, .protyle-title, .table__cell-rich";
+// .b3-typography--default 用于渲染界面内的富文本（读取面板、插件市场说明、更新日志等），
+// 按界面文字处理，不含在内，否则「仅编辑器」模式会把界面文字也换成编辑器字体
+const EDITOR_SELECTORS = ".b3-typography:not(.b3-typography--default), .protyle-wysiwyg, .protyle-title";
 
 // 界面内直接引用 --b3-font-family 的元素，其余界面元素从 body 继承字体；
 // .b3-tooltips::after 为提示气泡文本，.protyle-attr 为编辑器内的块属性浮层
 const UI_FONT_SELECTORS = "body, button, input, select, textarea, .b3-tooltips::after, .protyle-attr";
 
-// 编辑器内需要保留 SiYuan 设置的字体字重的元素：前三个在配置了编辑器字体时由 setInlineStyle
-// 写入字重，.table__cell-rich 与其余元素从 body 继承全局字体字重；
-// .b3-typography--default 用于渲染界面内的富文本，按界面文字处理，不含在内
-const EDITOR_WEIGHT_SELECTORS = ".b3-typography:not(.b3-typography--default), .protyle-wysiwyg, .protyle-title, .table__cell-rich";
+// 表格单元格内的富文本预览与嵌套编辑器位于 th/td 之内，字重必须沿用宿主单元格的声明，
+// 例如表头 th 的 600、表体 td 的 normal，不能改用插件下发的字重
+const TABLE_CELL_WEIGHT_SELECTORS = ".table__cell-rich, .table__cell-editor .protyle-wysiwyg";
 
 // 鸿蒙黑体只提供 400 与 700 两个字重，沿用「设置 - 外观」中选择的字体字重会触发合成加粗
 const DEFAULT_FONT_WEIGHT = 400;
@@ -186,7 +187,9 @@ export default class HarmonyOSFontPlugin extends Plugin {
         // 编辑器元素需要压过 setInlineStyle 的 .b3-typography:not(...)（特异性 0,2,0）
         const editorWeight = `${bodyWeight} !important`;
         if (fontScope === "both") {
-            rules.push(`:root:lang(${lang}) { --b3-font-family-default: ${stack} !important; --b3-font-family-editor: ${stack} !important; --b3-font-family: ${stack} !important; }`);
+            // 不使用 :lang() 限定：!important 已足以压过主题与 globalFont.ts 的 :root:root 声明，
+            // 而 :lang() 依赖 html 的 lang 属性，该属性在启动早期或导出等场景可能缺失，会使整组规则静默失效
+            rules.push(`:root { --b3-font-family-default: ${stack} !important; --b3-font-family-editor: ${stack} !important; --b3-font-family: ${stack} !important; }`);
             // globalFont.ts 会按用户选择的全局字体给以下元素写入 font-weight
             rules.push(`body, button, input, select, textarea { ${bodyWeight}; }`);
         } else if (fontScope === "ui") {
@@ -199,23 +202,29 @@ export default class HarmonyOSFontPlugin extends Plugin {
             const editorFontWeight = readFirstFontWeight(window.siyuan.config.editor, "fontFamilies") ||
                 readFirstFontWeight(window.siyuan.config.appearance, "globalFontFamilies") || DEFAULT_FONT_WEIGHT;
             if (editorFontWeight !== DEFAULT_FONT_WEIGHT) {
-                rules.push(`${EDITOR_WEIGHT_SELECTORS} { font-weight: ${editorFontWeight}; }`);
+                rules.push(`${EDITOR_SELECTORS} { font-weight: ${editorFontWeight}; }`);
+                // .protyle-wysiwyg 会命中表格单元格内嵌套的编辑器，需恢复为从宿主单元格继承
+                rules.push(`${TABLE_CELL_WEIGHT_SELECTORS} { font-weight: inherit; }`);
             }
         } else if (fontScope === "editor") {
             // 这三个变量都会被编辑器元素的 font-family 直接引用，替换在该元素上完成，可以在此覆盖；
             // --b3-font-family-protyle 用于未配置编辑器字体时，--b3-font-family-editor 与
             // --b3-font-family 用于已配置编辑器字体时
-            rules.push(`${EDITOR_FONT_SELECTORS} { --b3-font-family-protyle: ${stack} !important; --b3-font-family-editor: ${stack} !important; --b3-font-family: ${stack} !important; }`);
+            rules.push(`${EDITOR_SELECTORS} { --b3-font-family-protyle: ${stack} !important; --b3-font-family-editor: ${stack} !important; --b3-font-family: ${stack} !important; }`);
         }
         if (fontScope === "both" || fontScope === "editor") {
             // setInlineStyle 会按用户选择的编辑器字体给编辑器元素写入 font-weight
-            rules.push(`${EDITOR_FONT_SELECTORS} { ${editorWeight}; }`);
+            rules.push(`${EDITOR_SELECTORS} { ${editorWeight}; }`);
+            // 表格单元格内的内容沿用宿主单元格的字重，避免覆盖表头 th 的 600 等声明；
+            // 上面的 important 声明会命中单元格内嵌套的 .protyle-wysiwyg，故此处同样需要 important
+            rules.push(`${TABLE_CELL_WEIGHT_SELECTORS} { font-weight: inherit !important; }`);
         }
 
         if (emojiFont) {
             // emoji 前缀由该变量承载，覆盖它 Twemoji 才能排在 "Emojis Additional" 之前
             rules.push(`:root { --b3-font-family-emoji-reset: ${emojiStack} !important; }`);
-            rules.push(':root { --b3-font-family-emoji: "Twemoji", "Emojis Additional", emojis !important; }');
+            // "Emojis Icon" 由主题在 Windows 11 上声明，图标位依赖其字形墨迹对齐，需要保留
+            rules.push(':root { --b3-font-family-emoji: "Twemoji", "Emojis Additional", "Emojis Icon", emojis !important; }');
         }
 
         // id 以 snippetCSS 开头的 style 元素会被添加到导出 PDF 中
@@ -256,19 +265,28 @@ export default class HarmonyOSFontPlugin extends Plugin {
     }
 
     private preloadFonts() {
-        if (this.config.fontScope === "none" || !document.fonts || typeof document.fonts.load !== "function") {
+        if (!document.fonts || typeof document.fonts.load !== "function") {
             return;
         }
+        // 「不使用插件字体」只关闭文字字体，emoji 仍是独立开关，需要单独预加载
+        if (this.config.fontScope === "none" && !this.config.emojiFont) {
+            return;
+        }
+        const loadTextFont = this.config.fontScope !== "none";
         setTimeout(() => {
             try {
-                document.fonts.load('400 16px "HarmonyOS Sans"', "1");
-                document.fonts.load('700 16px "HarmonyOS Sans"', "2");
-                document.fonts.load('italic 400 16px "HarmonyOS Sans"', "3");
-                document.fonts.load('italic 700 16px "HarmonyOS Sans"', "4");
+                if (loadTextFont) {
+                    document.fonts.load('400 16px "HarmonyOS Sans"', "1");
+                    document.fonts.load('700 16px "HarmonyOS Sans"', "2");
+                    document.fonts.load('italic 400 16px "HarmonyOS Sans"', "3");
+                    document.fonts.load('italic 700 16px "HarmonyOS Sans"', "4");
+                }
                 if (this.config.emojiFont) {
                     document.fonts.load('400 16px "Twemoji"', "😀");
                 }
-            } catch (_) {}
+            } catch (_) {
+                // 预加载失败不影响字体使用，实际渲染时仍会按需拉取
+            }
         }, 0);
     }
 }
